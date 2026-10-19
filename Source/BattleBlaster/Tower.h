@@ -36,5 +36,5 @@ public:
 
 	void CheckFireCondition();	
 	bool isinFireRange();	
-	
+	void HandleDestruction();
 };

@@ -28,7 +28,7 @@ void ATower::Tick(float DeltaTime)
 
 void ATower::CheckFireCondition()
 {
-	if(Tank && isinFireRange()) {
+	if(Tank && Tank->IsAlive && isinFireRange()) {
 		Fire();
 	}
 }
@@ -43,6 +43,12 @@ bool ATower::isinFireRange()
 		Result = DistanceToTank <= FireRange;
 	}
 	return Result;
+}
+
+void ATower::HandleDestruction()
+{
+	Super::HandleDestruction();
+	Destroy();
 }
 
 

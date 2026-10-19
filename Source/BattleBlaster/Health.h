@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+
+#include "BattleBlasterGameMode.h"
 #include "Health.generated.h"
 
 
@@ -29,6 +31,11 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	float Health;
+
+	ABattleBlasterGameMode* BattleBlasterGameMode;
+
+	UFUNCTION()
+	void OnTakeDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser);	
 
 		
 };
